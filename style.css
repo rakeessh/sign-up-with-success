@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('./assets/fonts/Roboto-Bold.ttf');
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'CustomFont', sans-serif;
+}
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+    --DStateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--DStateGrey);
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: var(--white); font-size: 16px; }
+
+.container {
+    background-color: var(--white);
+    height: 450px;
+    width: 60vw;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+    z-index: 1;
+}
+
+.boxes {
+    width: 40%;
+    height: 100%;
+}
+
+.boxes:nth-child(1) {
+    width: 60%;
+    padding: 20px;
+    color: var(--CharcoalGrey);
+    font-weight: 500;
+}
+
+.boxes:nth-child(1) h1 {
+    font-weight: 900;
+    font-size: 50px;
+    margin: 15px 0px;
+}
+
+.boxes:nth-child(1) ul {
+    margin-left: 30px;
+    line-height: 2rem;
+}
+
+.boxes:nth-child(1) ul li {
+    list-style-image: url('./assets/images/icon-list.svg');
+}
+
+.boxes:nth-child(1)>* {
+    margin: 10px 0px;
+}
+
+.boxes:nth-child(1) .fields {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.boxes:nth-child(1) form {
+    width: 90%;
+}
+
+.boxes:nth-child(1) form input {
+    width: 100% !important;
+    border: 1px solid #808080;
+}
+
+.btn {
+    background-color: #05051b;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-image: linear-gradient(to right, var(--tomato), var(--tomato), #ff9900b6);
+}
+
+.boxes:nth-child(2) {
+    background-image: url('./assets/images/illustration-sign-up-desktop.svg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.message {
+    position: absolute;
+    width: 40%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 40px;
+    color: #090930;
+    display: flex;
+    flex-flow: column wrap;
+
+}
+
+.message h1 {
+    font-size: 50px;
+    line-height: 3rem;
+    margin: 10px 0px 20px 0px;
+}
+
+.message p {
+    margin: 30px 0px;
+    font-weight: 200 !important;
+}
+
+
+.hideItem {
+    display: none;
+}
+
+.errorInput {
+    border: 1px solid red !important;
+}
+
+/* Responsiveness start from here */
+/* Main content resposive area  */
+
+@media screen and (max-width:820px) {
+    .container {
+        width: 100%;
+    }
+
+    .container .boxes:nth-child(1) {
+        margin: 0;
+        padding: 2px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        flex-flow: column-reverse;
+    }
+
+    .boxes:nth-child(1) {
+        width: 100%;
+    }
+
+    .boxes:nth-child(1) h1 {
+        font-size: 30px;
+    }
+
+    .boxes:nth-child(2) {
+        border-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 100%;
+        background-image: url('./assets/images/illustration-sign-up-mobile.svg');
+        background-position: center center;
+    }
+}
+
+
+/* message box respondsive  */
+@media screen and (max-width:540px) {
+    .message {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .message {
+        width: 100vw;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .message h1 {
+        font-size: 40px;
+    }
+}
